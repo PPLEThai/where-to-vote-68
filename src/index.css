@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Anakotmai";
+  src: url("/fonts/anakotmai-light.woff2") format("woff2"),
+    url("/fonts/anakotmai-light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Anakotmai";
+  src: url("/fonts/anakotmai-medium.woff2") format("woff2"),
+    url("/fonts/anakotmai-medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Anakotmai";
+  src: url("/fonts/anakotmai-bold.woff2") format("woff2"),
+    url("/fonts/anakotmai-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  font-family: Anakotmai, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #223a79, #cb602e) fixed;
+  color: #222;
+}
