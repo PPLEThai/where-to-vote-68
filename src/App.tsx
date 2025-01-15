@@ -59,7 +59,7 @@ function App() {
     }`;
     // TODO: remove this
     // candidateKey = "นครปฐม::สามพราน::3";
-    candidateKey = "จันทบุรี::สอยดาว::2";
+    // candidateKey = "จันทบุรี::สอยดาว::2";
     candidate = candidates[candidateKey as keyof typeof candidates];
     console.log("candidate", candidate);
     if (!candidate) {
