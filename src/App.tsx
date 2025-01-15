@@ -48,6 +48,8 @@ function App() {
         setError(
           "ไม่พบข้อมูลสิทธิการเลือกตั้งท้องถิ่นของท่านในวันที่ 1 กุมภาพันธ์ นี้"
         );
+      } else {
+        setError(null);
       }
     } else {
       setBoraResult([]);
