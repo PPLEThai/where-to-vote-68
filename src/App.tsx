@@ -18,6 +18,7 @@ function App() {
     );
     if (resp.ok) {
       const data = await resp.json();
+      data.filter((item: BoraResponse) => item.eledate === 25680201);
       setBoraResult(data);
     } else {
       setBoraResult([]);
@@ -49,7 +50,7 @@ function App() {
       item.earea
     }`;
     // TODO: remove this
-    candidateKey = "นครปฐม::สามพราน::3";
+    // candidateKey = "นครปฐม::สามพราน::3";
     candidate = candidates[candidateKey as keyof typeof candidates];
   }
   return (
@@ -72,9 +73,7 @@ function App() {
             type="text"
             inputMode="numeric"
             value={inputValue}
-            onChange={(formattedValue: string, raw: string) =>
-              setInputValue(formattedValue)
-            }
+            onChange={(formattedValue: string) => setInputValue(formattedValue)}
             className="px-4 py-2 border border-black text-lg rounded-lg flex-1 bg-white/40 hover:bg-white/70 transition-colors"
           />
           {error && <p className="text-[#6E0B0B]">{error}</p>}

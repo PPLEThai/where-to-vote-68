@@ -3,4 +3,5 @@ export interface BoraResponse {
   desp: string;
   earea: string;
   eunit: string;
+  eledate: number;
 }
