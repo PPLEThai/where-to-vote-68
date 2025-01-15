@@ -11,7 +11,9 @@ function App() {
   const [inputValue, setInputValue] = useState("");
   const handleSubmit = useCallback(async () => {
     const resp = await fetch(
-      `https://bora-cors.peoplesparty.or.th/https://boraservices.bora.dopa.go.th/api/eleloc/v1/eleloccheck/${inputValue.replace(
+      `${
+        import.meta.env.VITE_BORA_CORS_URL
+      }https://boraservices.bora.dopa.go.th/api/eleloc/v1/eleloccheck/${inputValue.replace(
         /-/g,
         ""
       )}`
@@ -20,6 +22,11 @@ function App() {
       const data = await resp.json();
       data.filter((item: BoraResponse) => item.eledate === 25680201);
       setBoraResult(data);
+      if (data.length === 0) {
+        setError(
+          "ไม่พบข้อมูลสิทธิการเลือกตั้งท้องถิ่นของท่านในวันที่ 1 กุมภาพันธ์ นี้"
+        );
+      }
     } else {
       setBoraResult([]);
       setError(
@@ -79,7 +86,8 @@ function App() {
           {error && <p className="text-[#6E0B0B]">{error}</p>}
           <button
             onClick={handleSubmit}
-            className="px-4 text-xl py-2 bg-[#191E50] text-[#ddd] rounded-lg hover:bg-[#242E91] transition-colors"
+            disabled={inputValue.replace(/-/g, "").length !== 13}
+            className="px-4 text-xl py-2 bg-[#191E50] text-[#ddd] rounded-lg disabled:opacity-60 disabled:cursor-not-allowed hover:bg-[#242E91] transition-colors"
           >
             ตรวจสอบ
           </button>
