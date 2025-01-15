@@ -6,6 +6,7 @@ import { BoraResponse } from "./types/bora";
 import { Checkbox } from "./components/Checkbox";
 import logo from "./assets/logo.png";
 import { FormattedInput } from "@buttercup/react-formatted-input";
+import { motion } from "framer-motion";
 const candidates = candidatesRaw as { [key: string]: Candidate };
 
 const uniqueArray = (ar: string[]) => {
@@ -62,6 +63,7 @@ function App() {
     setExtraFormKey(
       `${selectedProvince}::${selectedDistrict}::${selectedDistrictNo}`
     );
+    setBoraResult([]);
   }, [selectedProvince, selectedDistrict, selectedDistrictNo, setExtraFormKey]);
   let candidateKey = "";
   let candidate = null;
@@ -349,7 +351,10 @@ function App() {
             </h2>
             {candidate?.obj_full_name && (
               <div className="flex flex-col items-center">
-                <img
+                <motion.img
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                   src={candidate?.obj_profile_picture ?? ""}
                   alt="Candidate"
                   className="w-[30%] rounded-2xl"
@@ -442,6 +447,7 @@ function App() {
                 <Checkbox
                   text={candidate.sobj_candidate_number ?? ""}
                   fillColor={candidate.sobj_color_code ?? ""}
+                  delay
                 />
               )}
             </div>
