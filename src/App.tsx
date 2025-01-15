@@ -59,6 +59,7 @@ function App() {
     }`;
     // TODO: remove this
     // candidateKey = "นครปฐม::สามพราน::3";
+    candidateKey = "จันทบุรี::สอยดาว::2";
     candidate = candidates[candidateKey as keyof typeof candidates];
     console.log("candidate", candidate);
     if (!candidate) {
@@ -68,11 +69,11 @@ function App() {
     }
   }
   return (
-    <div className="flex flex-col items-center pt-20 px-6 pb-10">
+    <div className="flex flex-col items-center pt-5 sm:pt-20 px-4 sm:px-6 pb-10">
       <div>
-        <img src={logo} alt="PPLE Logo" className="w-[300px]" />
+        <img src={logo} alt="PPLE Logo" className="w-[200px] sm:w-[300px]" />
       </div>
-      <div className="max-w-[600px] mx-auto mt-20 bg-white/40 rounded-[20px] p-6">
+      <div className="max-w-[600px] mx-auto mt-5 sm:mt-20 bg-white/40 rounded-[20px] p-6">
         <h1 className="text-center text-2xl font-bold">
           ตรวจสอบหน่วยเลือกตั้งและหมายเลขผู้สมัคร นายกอบจ. และ
           ส.อบจ.ของพรรคประชาชน
@@ -201,10 +202,10 @@ function App() {
               </>
             )}
           </div>
-          <div className="flex flex-col items-center">
-            <div className="flex flex-row items-center gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div>
               {candidate?.obj_full_name && (
-                <p className="mt-4 p-4 text-right rounded-lg text-xl">
+                <p className="mt-4 text-center rounded-lg text-xl">
                   บัตรสี{" "}
                   <span className="font-bold">{candidate?.obj_color_name}</span>{" "}
                   กาเบอร์{" "}
@@ -213,8 +214,18 @@ function App() {
                   </span>
                 </p>
               )}
+
+              {candidate?.obj_full_name && (
+                <Checkbox
+                  text={candidate.obj_candidate_number ?? ""}
+                  fillColor={candidate.obj_color_code ?? ""}
+                />
+              )}
+            </div>
+
+            <div>
               {candidate?.sobj_full_name && (
-                <p className="mt-4 p-4 rounded-lg text-xl">
+                <p className="mt-4 rounded-lg text-xl text-center">
                   บัตรสี{" "}
                   <span className="font-bold">
                     {candidate?.sobj_color_name}
@@ -224,14 +235,6 @@ function App() {
                     {candidate?.sobj_candidate_number}
                   </span>
                 </p>
-              )}
-            </div>
-            <div className="flex flex-row items-center gap-4">
-              {candidate?.obj_full_name && (
-                <Checkbox
-                  text={candidate.obj_candidate_number ?? ""}
-                  fillColor={candidate.obj_color_code ?? ""}
-                />
               )}
               {candidate?.sobj_full_name && (
                 <Checkbox
