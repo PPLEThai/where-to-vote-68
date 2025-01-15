@@ -202,7 +202,7 @@ function App() {
               </>
             )}
           </div>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <div>
               {candidate?.obj_full_name && (
                 <p className="mt-4 text-center rounded-lg text-xl">
