@@ -1,10 +1,12 @@
 import { useState, useCallback } from "react";
 import "./App.css";
-import candidates from "./assets/candidates.json";
+import { Candidate } from "./types/candidate";
+import candidatesRaw from "./assets/candidates.json";
 import { BoraResponse } from "./types/bora";
 import { Checkbox } from "./components/Checkbox";
 import logo from "./assets/logo.png";
 import { FormattedInput } from "@buttercup/react-formatted-input";
+const candidates = candidatesRaw as { [key: string]: Candidate };
 function App() {
   const [boraResult, setBoraResult] = useState<BoraResponse[]>();
   const [error, setError] = useState<string | null>(null);
@@ -36,7 +38,6 @@ function App() {
   }, [inputValue, setBoraResult]);
   let candidateKey = "";
   let candidate = null;
-  console.log("inputValue", inputValue);
   const idPattern = [
     { char: /\d/, repeat: 1 },
     { exactly: "-" },
@@ -59,6 +60,12 @@ function App() {
     // TODO: remove this
     // candidateKey = "นครปฐม::สามพราน::3";
     candidate = candidates[candidateKey as keyof typeof candidates];
+    console.log("candidate", candidate);
+    if (!candidate) {
+      candidateKey = `${matchProvince?.[1].trim()}`;
+      candidate = candidates[candidateKey as keyof typeof candidates];
+      console.log("candidate2", candidate);
+    }
   }
   return (
     <div className="flex flex-col items-center pt-20 px-6 pb-10">
