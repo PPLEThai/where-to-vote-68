@@ -1,13 +1,11 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import "./App.css";
 import { Candidate } from "./types/candidate";
-import candidatesRaw from "./assets/candidates.json";
 import { BoraResponse } from "./types/bora";
 import { Checkbox } from "./components/Checkbox";
 import logo from "./assets/logo.png";
 import { FormattedInput } from "@buttercup/react-formatted-input";
 import { motion } from "framer-motion";
-const candidates = candidatesRaw as { [key: string]: Candidate };
 
 const uniqueArray = (ar: string[]) => {
   const j: { [key: string]: string } = {};
@@ -20,9 +18,6 @@ const uniqueArray = (ar: string[]) => {
     return j[v];
   });
 };
-const provinces = uniqueArray(
-  Object.keys(candidates).map((key) => key.split("::")[0])
-);
 function App() {
   const [boraResult, setBoraResult] = useState<BoraResponse[]>();
   const [showExtraForm, setShowExtraForm] = useState(false);
@@ -33,6 +28,19 @@ function App() {
   const [selectedDistrictNo, setSelectedDistrictNo] = useState("");
   const [loading, setLoading] = useState<boolean>(false);
   const [extraFormKey, setExtraFormKey] = useState<string | undefined>();
+  const [candidates, setCandidates] = useState<{ [key: string]: Candidate }>(
+    {}
+  );
+  useEffect(() => {
+    async function loadCandidates() {
+      const candidatesRaw = await import("./assets/candidates.json");
+      setCandidates(candidatesRaw.default);
+    }
+    loadCandidates();
+  }, [setCandidates]);
+  const provinces = uniqueArray(
+    Object.keys(candidates).map((key) => key.split("::")[0])
+  );
   const handleSubmit = useCallback(async () => {
     setLoading(true);
     setBoraResult([]);
