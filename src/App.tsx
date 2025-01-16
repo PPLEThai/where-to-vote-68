@@ -36,7 +36,7 @@ function App() {
     const resp = await fetch(
       `${
         import.meta.env.VITE_BORA_CORS_URL
-      }https://boraservices.bora.dopa.go.th/api/eleloc/v1/eleloccheck/${inputValue.replace(
+      }boraservices.bora.dopa.go.th/api/eleloc/v1/eleloccheck/${inputValue.replace(
         /-/g,
         ""
       )}`
