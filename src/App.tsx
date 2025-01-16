@@ -346,7 +346,7 @@ function App() {
             }
           }}
         >
-          <p className="text-md text-[#222] font-regular text-center mb-2 font-body">
+          <p className="text-md text-[#222] font-regular text-center text-sm mb-2 font-body">
             ท่านสามารถบันทึกหน้าจอนี้ไว้ได้เพื่อความสะดวกในการไปใช้สิทธิเลือกตั้ง
           </p>
           {boraResult && boraResult.length > 0 && (
@@ -354,13 +354,12 @@ function App() {
               <h2 className="text-center text-3xl font-bold">
                 หน่วยเลือกตั้งของท่าน
               </h2>
-              <div className="grid grid-cols-[30%_70%] gap-x-4 gap-y-2 text-lg my-4">
+              <div className="grid grid-cols-[35%_65%] gap-x-4 gap-y-2 text-md my-4 font-body">
                 <div className="text-right">จังหวัด</div>
                 <div className="">{boraResult[0].desc}</div>
                 <div className="text-right">เขตเลือกตั้งที่</div>
                 <div>
-                  {boraResult[0].earea}{" "}
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;หน่วยเลือกตั้งที่&nbsp;&nbsp;&nbsp;
+                  {boraResult[0].earea} &nbsp;&nbsp;หน่วยเลือกตั้งที่&nbsp;
                   {boraResult[0].eunit}
                 </div>
                 <div className="text-right">สถานที่เลือกตั้ง</div>
@@ -424,7 +423,7 @@ function App() {
             )}
             {!candidate?.sobj_full_name && (
               <>
-                <h2 className="text-center text-2xl font-bold mt-8 mb-4 underline">
+                <h2 className="text-center text-2xl font-bold mt-4 mb-4 underline">
                   ผู้สมัครส.อบจ.
                 </h2>
                 <p className="text-center font-body">
