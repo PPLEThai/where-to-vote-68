@@ -41,45 +41,53 @@ function App() {
   const provinces = uniqueArray(
     Object.keys(candidates).map((key) => key.split("::")[0])
   );
-  const handleSubmit = useCallback(async () => {
-    setLoading(true);
-    setBoraResult([]);
-    try {
-      const resp = await fetch(
-        `${
-          import.meta.env.VITE_BORA_CORS_URL
-        }boraservices.bora.dopa.go.th/api/eleloc/v1/eleloccheck/${inputValue.replace(
-          /-/g,
-          ""
-        )}`
-      );
-      if (resp.ok) {
-        const data = await resp.json();
-        data.filter((item: BoraResponse) => item.eledate === 25680201);
-        setBoraResult(data);
-        if (data.length === 0) {
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      setLoading(true);
+      setBoraResult([]);
+      try {
+        const resp = await fetch(
+          `${
+            import.meta.env.VITE_BORA_CORS_URL
+          }boraservices.bora.dopa.go.th/api/eleloc/v1/eleloccheck/${inputValue.replace(
+            /-/g,
+            ""
+          )}`
+        );
+        if (resp.ok) {
+          const data = await resp.json();
+          data.filter((item: BoraResponse) => item.eledate === 25680201);
+          setBoraResult(data);
+          if (data.length === 0) {
+            setError(
+              "ไม่พบข้อมูลสิทธิการเลือกตั้งท้องถิ่นของท่านในวันที่ 1 กุมภาพันธ์ นี้"
+            );
+          } else {
+            setError(null);
+          }
+        } else {
+          setBoraResult([]);
           setError(
             "ไม่พบข้อมูลสิทธิการเลือกตั้งท้องถิ่นของท่านในวันที่ 1 กุมภาพันธ์ นี้"
           );
-        } else {
-          setError(null);
         }
-      } else {
-        setBoraResult([]);
-        setError(
-          "ไม่พบข้อมูลสิทธิการเลือกตั้งท้องถิ่นของท่านในวันที่ 1 กุมภาพันธ์ นี้"
-        );
+      } finally {
+        setLoading(false);
       }
-    } finally {
-      setLoading(false);
-    }
-  }, [inputValue, setBoraResult]);
-  const handleExtraFormSubmit = useCallback(() => {
-    setExtraFormKey(
-      `${selectedProvince}::${selectedDistrict}::${selectedDistrictNo}`
-    );
-    setBoraResult([]);
-  }, [selectedProvince, selectedDistrict, selectedDistrictNo, setExtraFormKey]);
+    },
+    [inputValue, setBoraResult]
+  );
+  const handleExtraFormSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      setExtraFormKey(
+        `${selectedProvince}::${selectedDistrict}::${selectedDistrictNo}`
+      );
+      setBoraResult([]);
+    },
+    [selectedProvince, selectedDistrict, selectedDistrictNo, setExtraFormKey]
+  );
   let candidateKey = "";
   let candidate = null;
   const idPattern = [
@@ -177,7 +185,7 @@ function App() {
         </h1>
         <div className="flex flex-col space-y-2 mt-5">
           {!showExtraForm && (
-            <form className="flex flex-col space-y-2">
+            <form className="flex flex-col space-y-2" onSubmit={handleSubmit}>
               <label htmlFor="inputValue" className="text-lg">
                 เลขบัตรประจำตัวประชาชน
               </label>
@@ -195,7 +203,6 @@ function App() {
               {error && <p className="text-[#6E0B0B]">{error}</p>}
               <button
                 type="submit"
-                onClick={handleSubmit}
                 disabled={inputValue.replace(/-/g, "").length !== 13 || loading}
                 className="px-4 text-xl py-2 bg-[#191E50] text-[#ddd] rounded-lg disabled:opacity-60 disabled:cursor-not-allowed hover:bg-[#242E91] transition-colors"
               >
@@ -233,7 +240,10 @@ function App() {
             </form>
           )}
           {showExtraForm && (
-            <form className="flex flex-col space-y-2">
+            <form
+              className="flex flex-col space-y-2"
+              onSubmit={handleExtraFormSubmit}
+            >
               <div className="flex flex-col space-y-2">
                 <h2 className="text-center text-xl font-bold">
                   ตรวจสอบโดยทราบเขตเลือกตั้ง
@@ -323,7 +333,6 @@ function App() {
 
                 <button
                   type="submit"
-                  onClick={handleExtraFormSubmit}
                   disabled={!isExtraFormValid}
                   className="px-4 text-xl py-2 bg-[#191E50] text-[#ddd] rounded-lg disabled:opacity-60 disabled:cursor-not-allowed hover:bg-[#242E91] transition-colors"
                 >
