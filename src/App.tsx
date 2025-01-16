@@ -147,6 +147,7 @@ function App() {
         .map((key) => key.split("::")[2])
     );
   }
+  const currentProvince = candidate?.province ?? boraResult?.[0]?.desc ?? "";
   const isExtraFormValid =
     (selectedProvince !== "" &&
       selectedDistrict !== "" &&
@@ -396,11 +397,11 @@ function App() {
             {!candidate?.obj_full_name && (
               <>
                 <p className="text-center font-body">
-                  ไม่มีผู้สมัครนายกอบจ.ในนามพรรคประชาชน
+                  ไม่พบข้อมูลผู้สมัครนายกอบจ.ในนามพรรคประชาชน
                 </p>
                 <p className="text-center font-body">
                   หรือในการเลือกตั้งวันที่ 1 กุมภาพันธ์ นี้
-                  ไม่มีการเลือกนายกอบจ.
+                  ไม่มีการเลือกนายกอบจ. {currentProvince}
                 </p>
               </>
             )}
@@ -427,10 +428,7 @@ function App() {
                   ผู้สมัครส.อบจ.
                 </h2>
                 <p className="text-center font-body">
-                  ไม่มีผู้สมัครส.อบจ.ในนามพรรคประชาชน
-                </p>
-                <p className="text-center font-body">
-                  หรือในการเลือกตั้งวันที่ 1 กุมภาพันธ์ นี้ ไม่มีการเลือกส.อบจ.
+                  ไม่พบข้อมูลผู้สมัครส.อบจ.ในนามพรรคประชาชน
                 </p>
               </>
             )}
