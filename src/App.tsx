@@ -31,32 +31,38 @@ function App() {
   const [selectedProvince, setSelectedProvince] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [selectedDistrictNo, setSelectedDistrictNo] = useState("");
+  const [loading, setLoading] = useState<boolean>(false);
   const [extraFormKey, setExtraFormKey] = useState<string | undefined>();
   const handleSubmit = useCallback(async () => {
-    const resp = await fetch(
-      `${
-        import.meta.env.VITE_BORA_CORS_URL
-      }boraservices.bora.dopa.go.th/api/eleloc/v1/eleloccheck/${inputValue.replace(
-        /-/g,
-        ""
-      )}`
-    );
-    if (resp.ok) {
-      const data = await resp.json();
-      data.filter((item: BoraResponse) => item.eledate === 25680201);
-      setBoraResult(data);
-      if (data.length === 0) {
+    setLoading(true);
+    try {
+      const resp = await fetch(
+        `${
+          import.meta.env.VITE_BORA_CORS_URL
+        }boraservices.bora.dopa.go.th/api/eleloc/v1/eleloccheck/${inputValue.replace(
+          /-/g,
+          ""
+        )}`
+      );
+      if (resp.ok) {
+        const data = await resp.json();
+        data.filter((item: BoraResponse) => item.eledate === 25680201);
+        setBoraResult(data);
+        if (data.length === 0) {
+          setError(
+            "ไม่พบข้อมูลสิทธิการเลือกตั้งท้องถิ่นของท่านในวันที่ 1 กุมภาพันธ์ นี้"
+          );
+        } else {
+          setError(null);
+        }
+      } else {
+        setBoraResult([]);
         setError(
           "ไม่พบข้อมูลสิทธิการเลือกตั้งท้องถิ่นของท่านในวันที่ 1 กุมภาพันธ์ นี้"
         );
-      } else {
-        setError(null);
       }
-    } else {
-      setBoraResult([]);
-      setError(
-        "ไม่พบข้อมูลสิทธิการเลือกตั้งท้องถิ่นของท่านในวันที่ 1 กุมภาพันธ์ นี้"
-      );
+    } finally {
+      setLoading(false);
     }
   }, [inputValue, setBoraResult]);
   const handleExtraFormSubmit = useCallback(() => {
@@ -179,10 +185,16 @@ function App() {
               {error && <p className="text-[#6E0B0B]">{error}</p>}
               <button
                 onClick={handleSubmit}
-                disabled={inputValue.replace(/-/g, "").length !== 13}
+                disabled={inputValue.replace(/-/g, "").length !== 13 || loading}
                 className="px-4 text-xl py-2 bg-[#191E50] text-[#ddd] rounded-lg disabled:opacity-60 disabled:cursor-not-allowed hover:bg-[#242E91] transition-colors"
               >
-                ตรวจสอบ
+                {loading ? (
+                  <div className="py-1 flex items-center justify-center">
+                    <div className="animate-spin rounded-full h-6 w-6 border-4 border-t-[#191E50]"></div>
+                  </div>
+                ) : (
+                  "ตรวจสอบ"
+                )}
               </button>
               <p className="text-sm text-[#222] font-regular font-body">
                 ข้อมูลเลขบัตรประจำตัวประชาชนของท่านจะถูกนำไปตรวจสอบกับเว็บไซต์ของสำนักบริหารการทะเบียน
@@ -383,7 +395,7 @@ function App() {
           <div className="my-3 flex flex-col items-center">
             {candidate?.sobj_full_name && (
               <div>
-                <h2 className="text-center text-2xl font-bold mt-8 mb-4 underline">
+                <h2 className="text-center text-2xl font-bold mt-4 mb-4 underline">
                   ผู้สมัครส.อบจ. อำเภอ{candidate?.district} เขต{" "}
                   {candidate?.district_no}
                 </h2>
