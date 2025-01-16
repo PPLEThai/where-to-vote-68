@@ -35,6 +35,7 @@ function App() {
   const [extraFormKey, setExtraFormKey] = useState<string | undefined>();
   const handleSubmit = useCallback(async () => {
     setLoading(true);
+    setBoraResult([]);
     try {
       const resp = await fetch(
         `${
@@ -330,7 +331,21 @@ function App() {
       </div>
 
       {((boraResult && boraResult.length > 0) || candidate) && (
-        <div className="w-full max-w-[600px] mx-auto mt-8 bg-white/60 rounded-[20px] p-6 flex flex-col">
+        <motion.div
+          id="result"
+          className="w-full max-w-[600px] mx-auto mt-8 bg-white/60 rounded-[20px] p-6 flex flex-col"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          onAnimationComplete={() => {
+            const element = document.querySelector("#result");
+            if (element) {
+              window.scrollTo({
+                top: window.scrollY + element.getBoundingClientRect().top - 20,
+                behavior: "smooth",
+              });
+            }
+          }}
+        >
           <p className="text-md text-[#222] font-regular text-center mb-2 font-body">
             ท่านสามารถบันทึกหน้าจอนี้ไว้ได้เพื่อความสะดวกในการไปใช้สิทธิเลือกตั้ง
           </p>
@@ -464,7 +479,7 @@ function App() {
               )}
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
     </div>
   );
