@@ -180,8 +180,9 @@ function App() {
       </div>
       <div className="max-w-[600px] mx-auto mt-5 sm:mt-20 bg-white/40 rounded-[20px] p-6">
         <h1 className="text-center text-2xl font-bold">
-          ตรวจสอบหน่วยเลือกตั้งและหมายเลขผู้สมัคร นายกอบจ. และ
-          ส.อบจ.ของพรรคประชาชน
+          ตรวจสอบหน่วยเลือกตั้งและหมายเลขผู้สมัคร{" "}
+          <span className="whitespace-nowrap">นายกอบจ.</span> และ
+          <span className="whitespace-nowrap">ส.อบจ.</span>ของพรรคประชาชน
         </h1>
         <div className="flex flex-col space-y-2 mt-5">
           {!showExtraForm && (
@@ -233,7 +234,7 @@ function App() {
               </p>
               <button
                 onClick={() => setShowExtraForm(true)}
-                className="px-4 color-[#222] text-md py-2 bg-[#fff]/0 rounded-lg hover:bg-[#fff]/20 transition-colors"
+                className="px-4 color-[#222] underline text-md py-2 bg-[#fff]/0 rounded-lg hover:bg-[#fff]/20 transition-colors"
               >
                 ตรวจสอบโดยทราบเขตเลือกตั้ง
               </button>
@@ -262,7 +263,10 @@ function App() {
                 </p>
                 <p className="text-sm text-[#222] font-regular font-body">
                   หากไม่มีตัวเลือกจังหวัดในรายการด้านล่าง
-                  หมายความว่าไม่มีข้อมูลของผู้สมัครนายกอบจ.และส.อบจ.ในนามพรรคประชาชน
+                  หมายความว่าไม่มีข้อมูลของผู้สมัคร
+                  <span className="whitespace-nowrap">นายก</span>
+                  อบจ.และ<span className="whitespace-nowrap">ส.อบจ.</span>
+                  ในนามพรรคประชาชน
                 </p>
                 <div className="flex flex-col">
                   <label htmlFor="provinceSelect" className="text-lg">
@@ -340,7 +344,7 @@ function App() {
                 </button>
                 <button
                   onClick={() => setShowExtraForm(false)}
-                  className="px-4 color-[#222] text-md py-2 bg-[#fff]/0 rounded-lg hover:bg-[#fff]/20 transition-colors"
+                  className="px-4 color-[#222] underline text-md py-2 bg-[#fff]/0 rounded-lg hover:bg-[#fff]/20 transition-colors"
                 >
                   ตรวจสอบโดยเลขบัตรประจำตัวประชาชน
                 </button>
@@ -393,7 +397,8 @@ function App() {
           </h2>
           <div className="my-3 flex flex-col items-center">
             <h2 className="text-center text-2xl font-bold mb-4 underline">
-              ผู้สมัครนายกอบจ. {candidate?.province}
+              ผู้สมัคร<span className="whitespace-nowrap">นายก</span>อบจ.{" "}
+              {candidate?.province}
             </h2>
             {candidate?.obj_full_name && (
               <div className="flex flex-col items-center">
@@ -416,11 +421,14 @@ function App() {
             {!candidate?.obj_full_name && (
               <>
                 <p className="text-center font-body">
-                  ไม่พบข้อมูลผู้สมัครนายกอบจ.ในนามพรรคประชาชน
+                  ไม่พบข้อมูลผู้สมัคร
+                  <span className="whitespace-nowrap">นายก</span>
+                  อบจ.ในนามพรรคประชาชน
                 </p>
                 <p className="text-center font-body">
-                  หรือในการเลือกตั้งวันที่ 1 กุมภาพันธ์ นี้
-                  ไม่มีการเลือกนายกอบจ. {currentProvince}
+                  หรือในการเลือกตั้งวันที่ 1 กุมภาพันธ์ นี้ ไม่มีการเลือก
+                  <span className="whitespace-nowrap">นายก</span>อบจ.{" "}
+                  {currentProvince}
                 </p>
               </>
             )}
@@ -430,8 +438,8 @@ function App() {
             {candidate?.sobj_full_name && (
               <div>
                 <h2 className="text-center text-2xl font-bold mt-4 mb-4 underline">
-                  ผู้สมัครส.อบจ. อำเภอ{candidate?.district} เขต{" "}
-                  {candidate?.district_no}
+                  ผู้สมัคร<span className="whitespace-nowrap">ส.อบจ.</span>{" "}
+                  อำเภอ{candidate?.district} เขต {candidate?.district_no}
                 </h2>
                 <p className="text-center text-3xl font-regular">
                   {candidate?.sobj_full_name}
@@ -444,10 +452,12 @@ function App() {
             {!candidate?.sobj_full_name && (
               <>
                 <h2 className="text-center text-2xl font-bold mt-4 mb-4 underline">
-                  ผู้สมัครส.อบจ.
+                  ผู้สมัคร<span className="whitespace-nowrap">ส.อบจ.</span>
                 </h2>
                 <p className="text-center font-body">
-                  ไม่พบข้อมูลผู้สมัครส.อบจ.ในนามพรรคประชาชน
+                  ไม่พบข้อมูลผู้สมัคร
+                  <span className="whitespace-nowrap">ส.อบจ.</span>
+                  ในนามพรรคประชาชน
                 </p>
               </>
             )}
