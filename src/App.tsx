@@ -177,7 +177,7 @@ function App() {
         </h1>
         <div className="flex flex-col space-y-2 mt-5">
           {!showExtraForm && (
-            <>
+            <form className="flex flex-col space-y-2">
               <label htmlFor="inputValue" className="text-lg">
                 เลขบัตรประจำตัวประชาชน
               </label>
@@ -194,6 +194,7 @@ function App() {
               />
               {error && <p className="text-[#6E0B0B]">{error}</p>}
               <button
+                type="submit"
                 onClick={handleSubmit}
                 disabled={inputValue.replace(/-/g, "").length !== 13 || loading}
                 className="px-4 text-xl py-2 bg-[#191E50] text-[#ddd] rounded-lg disabled:opacity-60 disabled:cursor-not-allowed hover:bg-[#242E91] transition-colors"
@@ -229,10 +230,10 @@ function App() {
               >
                 ตรวจสอบโดยทราบเขตเลือกตั้ง
               </button>
-            </>
+            </form>
           )}
           {showExtraForm && (
-            <>
+            <form className="flex flex-col space-y-2">
               <div className="flex flex-col space-y-2">
                 <h2 className="text-center text-xl font-bold">
                   ตรวจสอบโดยทราบเขตเลือกตั้ง
@@ -321,6 +322,7 @@ function App() {
                   )}
 
                 <button
+                  type="submit"
                   onClick={handleExtraFormSubmit}
                   disabled={!isExtraFormValid}
                   className="px-4 text-xl py-2 bg-[#191E50] text-[#ddd] rounded-lg disabled:opacity-60 disabled:cursor-not-allowed hover:bg-[#242E91] transition-colors"
@@ -334,7 +336,7 @@ function App() {
                   ตรวจสอบโดยเลขบัตรประจำตัวประชาชน
                 </button>
               </div>
-            </>
+            </form>
           )}
         </div>
       </div>
