@@ -190,7 +190,7 @@ function App() {
                 onChange={(formattedValue: string) =>
                   setInputValue(formattedValue)
                 }
-                className="px-4 py-2 border border-black text-lg rounded-lg flex-1 bg-white/40 hover:bg-white/70 transition-colors"
+                className="px-4 py-2 border border-white/40 text-lg rounded-lg flex-1 bg-white/40 hover:bg-white/70 transition-colors"
               />
               {error && <p className="text-[#6E0B0B]">{error}</p>}
               <button
@@ -262,7 +262,7 @@ function App() {
                     id="provinceSelect"
                     value={selectedProvince}
                     onChange={(e) => setSelectedProvince(e.target.value)}
-                    className="px-4 py-2 border border-black text-md rounded-lg bg-white/40 hover:bg-white/70 transition-colors"
+                    className="px-4 py-2 border border-white/40 text-md rounded-lg bg-white/40 hover:bg-white/70 transition-colors"
                   >
                     <option value="">-- เลือกจังหวัด --</option>
                     {provinces.map((province) => (
@@ -282,7 +282,7 @@ function App() {
                       id="districtSelect"
                       value={selectedDistrict}
                       onChange={(e) => setSelectedDistrict(e.target.value)}
-                      className="px-4 py-2 border border-black text-md rounded-lg bg-white/40 hover:bg-white/70 transition-colors"
+                      className="px-4 py-2 border border-white/40 text-md rounded-lg bg-white/40 hover:bg-white/70 transition-colors"
                     >
                       <option value="">-- เลือกอำเภอ --</option>
                       {districtList.map((district) => (
@@ -304,7 +304,7 @@ function App() {
                       </label>
                       <select
                         id="districtNoSelect"
-                        className="px-4 py-2 border border-black text-md rounded-lg bg-white/40 hover:bg-white/70 transition-colors"
+                        className="px-4 py-2 border border-white/40 text-md rounded-lg bg-white/40 hover:bg-white/70 transition-colors"
                         value={selectedDistrictNo}
                         onChange={(e) => setSelectedDistrictNo(e.target.value)}
                       >
