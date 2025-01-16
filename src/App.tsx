@@ -176,7 +176,9 @@ function App() {
   return (
     <div className="flex flex-col items-center pt-5 sm:pt-20 px-4 sm:px-6 pb-10">
       <div>
-        <img src={logo} alt="PPLE Logo" className="w-[200px] sm:w-[300px]" />
+        <a href="https://peoplesparty.or.th/local-election-2025/">
+          <img src={logo} alt="PPLE Logo" className="w-[200px] sm:w-[300px]" />
+        </a>
       </div>
       <div className="max-w-[600px] mx-auto mt-5 sm:mt-20 bg-white/40 rounded-[20px] p-6">
         <h1 className="text-center text-2xl font-bold">
