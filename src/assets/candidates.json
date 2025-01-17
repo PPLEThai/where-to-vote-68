@@ -734,21 +734,6 @@
     "obj_profile_picture": "https://peoplesparty.or.th/wp-content/uploads/2024/11/ภูเก็ต-ลงเว็บ.png",
     "obj_candidate_number": "2"
   },
-  "ภูเก็ต::ถลาง::7": {
-    "sobj_full_name": "สุภาวดี เกตุบุรม",
-    "sobj_candidate_number": null,
-    "province": "ภูเก็ต",
-    "district": "ถลาง",
-    "district_no": "7",
-    "region": "ภาคใต้",
-    "sobj_color_name": "คราม",
-    "sobj_color_code": "#0071C1",
-    "obj_color_name": "แดงเลือดหมู",
-    "obj_color_code": "#CC0001",
-    "obj_full_name": "นพ.เลอศักดิ์ ลีนะนิธิกุล",
-    "obj_profile_picture": "https://peoplesparty.or.th/wp-content/uploads/2024/11/ภูเก็ต-ลงเว็บ.png",
-    "obj_candidate_number": "2"
-  },
   "ภูเก็ต::กะทู้::1": {
     "sobj_full_name": "คุณากร เกษมภักดี",
     "sobj_candidate_number": "2",
@@ -2760,7 +2745,7 @@
     "obj_candidate_number": "2"
   },
   "นครนายก::เมืองนครนายก::6": {
-    "sobj_full_name": "พล​ ล่ำซำทรัพย์",
+    "sobj_full_name": "พล ล่ำซำทรัพย์",
     "sobj_candidate_number": "2",
     "province": "นครนายก",
     "district": "เมืองนครนายก",
@@ -5190,7 +5175,7 @@
     "obj_candidate_number": "1"
   },
   "เชียงใหม่::แม่ริม::1": {
-    "sobj_full_name": "มนัส คําจันทร์",
+    "sobj_full_name": "มนัส คำจันทร์",
     "sobj_candidate_number": "1",
     "province": "เชียงใหม่",
     "district": "แม่ริม",
@@ -5220,7 +5205,7 @@
     "obj_candidate_number": "1"
   },
   "เชียงใหม่::แม่แตง::2": {
-    "sobj_full_name": "อิ่นคํา ฟองสมุทร์",
+    "sobj_full_name": "อิ่นคำ ฟองสมุทร์",
     "sobj_candidate_number": "1",
     "province": "เชียงใหม่",
     "district": "แม่แตง",
@@ -8970,7 +8955,7 @@
     "obj_candidate_number": null
   },
   "บุรีรัมย์::กระสัง::3": {
-    "sobj_full_name": "ณฐนนท์ อะพรรัมย์",
+    "sobj_full_name": "ณฐนนพ์ อะพรรัมย์",
     "sobj_candidate_number": "1",
     "province": "บุรีรัมย์",
     "district": "กระสัง",
@@ -9675,7 +9660,7 @@
     "obj_candidate_number": null
   },
   "สุรินทร์::พนมดงรัก::1": {
-    "sobj_full_name": "ปฎิภูมิ แท่นแก้ว",
+    "sobj_full_name": "ปฏิภูมิ แท่นแก้ว",
     "sobj_candidate_number": "2",
     "province": "สุรินทร์",
     "district": "พนมดงรัก",
