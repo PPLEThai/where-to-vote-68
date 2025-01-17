@@ -5220,7 +5220,7 @@
     "obj_candidate_number": "1"
   },
   "เชียงใหม่::แม่แตง::2": {
-    "sobj_full_name": "ธนภูมิ วงศ์บุณยกรชัย",
+    "sobj_full_name": "อิ่นคํา ฟองสมุทร์",
     "sobj_candidate_number": "1",
     "province": "เชียงใหม่",
     "district": "แม่แตง",
@@ -5555,6 +5555,21 @@
     "province": "เชียงใหม่",
     "district": "สันกำแพง",
     "district_no": "2",
+    "region": "ภาคเหนือ",
+    "sobj_color_name": "ม่วง",
+    "sobj_color_code": "#9048C8",
+    "obj_color_name": "เหลือง",
+    "obj_color_code": "#FFFF01",
+    "obj_full_name": "พันธุ์อาจ ชัยรัตน์",
+    "obj_profile_picture": "https://peoplesparty.or.th/wp-content/uploads/2024/11/เชียงใหม่-ลงเว็บ.png",
+    "obj_candidate_number": "1"
+  },
+  "เชียงใหม่::แม่แตง::1": {
+    "sobj_full_name": "ธนภูมิ วงศ์บุณยกรชัย",
+    "sobj_candidate_number": "1",
+    "province": "เชียงใหม่",
+    "district": "แม่แตง",
+    "district_no": "1",
     "region": "ภาคเหนือ",
     "sobj_color_name": "ม่วง",
     "sobj_color_code": "#9048C8",
