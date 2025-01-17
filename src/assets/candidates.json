@@ -1604,11 +1604,11 @@
     "obj_profile_picture": null,
     "obj_candidate_number": null
   },
-  "นครปฐม::สามพราน::2": {
+  "นครปฐม::นครชัยศรี::2": {
     "sobj_full_name": "ณฐมน สุวรรณ",
     "sobj_candidate_number": "1",
     "province": "นครปฐม",
-    "district": "สามพราน",
+    "district": "นครชัยศรี",
     "district_no": "2",
     "region": "ภาคกลาง",
     "sobj_color_name": "เขียว",
@@ -1619,11 +1619,11 @@
     "obj_profile_picture": null,
     "obj_candidate_number": null
   },
-  "นครปฐม::กำแพงแสน::3": {
+  "นครปฐม::นครชัยศรี::3": {
     "sobj_full_name": "ฉลาด บุญปรีชา",
     "sobj_candidate_number": "1",
     "province": "นครปฐม",
-    "district": "กำแพงแสน",
+    "district": "นครชัยศรี",
     "district_no": "3",
     "region": "ภาคกลาง",
     "sobj_color_name": "เขียว",
@@ -1664,11 +1664,11 @@
     "obj_profile_picture": null,
     "obj_candidate_number": null
   },
-  "นครปฐม::นครชัยศรี::4": {
+  "นครปฐม::กำแพงแสน::4": {
     "sobj_full_name": "พิชัย กฤษดาธนดล",
     "sobj_candidate_number": "1",
     "province": "นครปฐม",
-    "district": "นครชัยศรี",
+    "district": "กำแพงแสน",
     "district_no": "4",
     "region": "ภาคกลาง",
     "sobj_color_name": "เขียว",
@@ -1679,11 +1679,11 @@
     "obj_profile_picture": null,
     "obj_candidate_number": null
   },
-  "นครปฐม::นครชัยศรี::2": {
+  "นครปฐม::บางเลน::2": {
     "sobj_full_name": "ปัณณธร อโปกุล",
     "sobj_candidate_number": "1",
     "province": "นครปฐม",
-    "district": "นครชัยศรี",
+    "district": "บางเลน",
     "district_no": "2",
     "region": "ภาคกลาง",
     "sobj_color_name": "เขียว",
@@ -1754,12 +1754,12 @@
     "obj_profile_picture": "https://peoplesparty.or.th/wp-content/uploads/2024/11/Image_25671114_195841_293.png",
     "obj_candidate_number": "2"
   },
-  "สมุทรสงคราม::เมืองสมุทรสงคราม::12": {
+  "สมุทรสงคราม::เมืองสมุทรสงคราม::11": {
     "sobj_full_name": "ยุทธ จิตรณรงค์",
     "sobj_candidate_number": "1",
     "province": "สมุทรสงคราม",
     "district": "เมืองสมุทรสงคราม",
-    "district_no": "12",
+    "district_no": "11",
     "region": "ภาคกลาง",
     "sobj_color_name": "เขียว",
     "sobj_color_code": "#00AF50",
@@ -1784,12 +1784,12 @@
     "obj_profile_picture": "https://peoplesparty.or.th/wp-content/uploads/2024/11/Image_25671114_195841_293.png",
     "obj_candidate_number": "2"
   },
-  "สมุทรสงคราม::เมืองสมุทรสงคราม::11": {
+  "สมุทรสงคราม::เมืองสมุทรสงคราม::12": {
     "sobj_full_name": "สมัคร จันทร์พึ่งสุข",
     "sobj_candidate_number": "2",
     "province": "สมุทรสงคราม",
     "district": "เมืองสมุทรสงคราม",
-    "district_no": "11",
+    "district_no": "12",
     "region": "ภาคกลาง",
     "sobj_color_name": "เขียว",
     "sobj_color_code": "#00AF50",
@@ -3256,7 +3256,7 @@
   },
   "นนทบุรี::ปากเกร็ด::5": {
     "sobj_full_name": "วันชาติ ศิริคำ",
-    "sobj_candidate_number": "2",
+    "sobj_candidate_number": "3",
     "province": "นนทบุรี",
     "district": "ปากเกร็ด",
     "district_no": "5",
@@ -4246,7 +4246,7 @@
   },
   "แพร่::วังชิ้น::1": {
     "sobj_full_name": "เจษฎา ทิปัญญา",
-    "sobj_candidate_number": "1",
+    "sobj_candidate_number": "4",
     "province": "แพร่",
     "district": "วังชิ้น",
     "district_no": "1",
@@ -4321,7 +4321,7 @@
   },
   "พิษณุโลก::วังทอง::3": {
     "sobj_full_name": "ฤทธิเกียรติ ถาโคตร",
-    "sobj_candidate_number": "3",
+    "sobj_candidate_number": "1",
     "province": "พิษณุโลก",
     "district": "วังทอง",
     "district_no": "3",
@@ -5249,12 +5249,12 @@
     "obj_profile_picture": "https://peoplesparty.or.th/wp-content/uploads/2024/11/เชียงใหม่-ลงเว็บ.png",
     "obj_candidate_number": "1"
   },
-  "เชียงใหม่::ฝาง::3": {
+  "เชียงใหม่::ฝาง::2": {
     "sobj_full_name": "กรกษิณ สามะนนถี",
     "sobj_candidate_number": "1",
     "province": "เชียงใหม่",
     "district": "ฝาง",
-    "district_no": "3",
+    "district_no": "2",
     "region": "ภาคเหนือ",
     "sobj_color_name": "ม่วง",
     "sobj_color_code": "#9048C8",
@@ -5460,7 +5460,7 @@
     "obj_candidate_number": "1"
   },
   "เชียงใหม่::สันป่าตอง::2": {
-    "sobj_full_name": "จันทร์จิรา สุขเทษา",
+    "sobj_full_name": "โยธิน ปัญญาแก้ว",
     "sobj_candidate_number": "1",
     "province": "เชียงใหม่",
     "district": "สันป่าตอง",
@@ -5569,6 +5569,21 @@
     "sobj_candidate_number": "1",
     "province": "เชียงใหม่",
     "district": "อมก๋อย",
+    "district_no": "1",
+    "region": "ภาคเหนือ",
+    "sobj_color_name": "ม่วง",
+    "sobj_color_code": "#9048C8",
+    "obj_color_name": "เหลือง",
+    "obj_color_code": "#FFFF01",
+    "obj_full_name": "พันธุ์อาจ ชัยรัตน์",
+    "obj_profile_picture": "https://peoplesparty.or.th/wp-content/uploads/2024/11/เชียงใหม่-ลงเว็บ.png",
+    "obj_candidate_number": "1"
+  },
+  "เชียงใหม่::สันป่าตอง::1": {
+    "sobj_full_name": "จันทร์จิรา สุขเทษา",
+    "sobj_candidate_number": "1",
+    "province": "เชียงใหม่",
+    "district": "สันป่าตอง",
     "district_no": "1",
     "region": "ภาคเหนือ",
     "sobj_color_name": "ม่วง",
@@ -6314,11 +6329,11 @@
     "obj_profile_picture": null,
     "obj_candidate_number": null
   },
-  "พระนครศรีอยุธยา::พระนครศรีอยุธยา::2": {
+  "พระนครศรีอยุธยา::บางปะหัน::2": {
     "sobj_full_name": "วรศักดิ์ พรสัมฤทธิ์",
     "sobj_candidate_number": "2",
     "province": "พระนครศรีอยุธยา",
-    "district": "พระนครศรีอยุธยา",
+    "district": "บางปะหัน",
     "district_no": "2",
     "region": "ภาคกลาง",
     "sobj_color_name": "เขียว",
@@ -6479,11 +6494,11 @@
     "obj_profile_picture": null,
     "obj_candidate_number": null
   },
-  "กำแพงเพชร::ขาณุวรลักษบุรี::1": {
+  "กำแพงเพชร::เมืองกำแพงเพชร::1": {
     "sobj_full_name": "ชินพัตน์ หู้เต็ม",
     "sobj_candidate_number": "3",
     "province": "กำแพงเพชร",
-    "district": "ขาณุวรลักษบุรี",
+    "district": "เมืองกำแพงเพชร",
     "district_no": "1",
     "region": "ภาคเหนือ",
     "sobj_color_name": "ม่วง",
@@ -6781,7 +6796,7 @@
   },
   "สุราษฎร์ธานี::กาญจนดิษฐ์::2": {
     "sobj_full_name": "เกียรติรักษ์ ชาครหัตถการ",
-    "sobj_candidate_number": "2",
+    "sobj_candidate_number": "3",
     "province": "สุราษฎร์ธานี",
     "district": "กาญจนดิษฐ์",
     "district_no": "2",
@@ -8849,12 +8864,12 @@
     "obj_profile_picture": null,
     "obj_candidate_number": null
   },
-  "หนองบัวลำภู::โนนสัง::5": {
+  "หนองบัวลำภู::โนนสัง::3": {
     "sobj_full_name": "พรชัย ภูเงิน",
     "sobj_candidate_number": "4",
     "province": "หนองบัวลำภู",
     "district": "โนนสัง",
-    "district_no": "5",
+    "district_no": "3",
     "region": "ภาคตะวันออกเฉียงเหนือ",
     "sobj_color_name": "เขียวอมฟ้า",
     "sobj_color_code": "#32849B",
@@ -9464,11 +9479,11 @@
     "obj_profile_picture": null,
     "obj_candidate_number": null
   },
-  "ร้อยเอ็ด::อาจสามารถ::1": {
+  "ร้อยเอ็ด::ศรีสมเด็จ::1": {
     "sobj_full_name": "วรานันท์ พิมพ์ดี",
     "sobj_candidate_number": "3",
     "province": "ร้อยเอ็ด",
-    "district": "อาจสามารถ",
+    "district": "ศรีสมเด็จ",
     "district_no": "1",
     "region": "ภาคตะวันออกเฉียงเหนือ",
     "sobj_color_name": "เขียวอมฟ้า",
@@ -9900,7 +9915,7 @@
     "obj_candidate_number": null
   },
   "อุบลราชธานี::ตระการพืชผล::3": {
-    "sobj_full_name": "สุชาวดี ชูศรานนท์",
+    "sobj_full_name": "สุชาวดี ชื่นใจ",
     "sobj_candidate_number": "1",
     "province": "อุบลราชธานี",
     "district": "ตระการพืชผล",
