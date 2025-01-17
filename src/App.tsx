@@ -18,6 +18,16 @@ const uniqueArray = (ar: string[]) => {
     return j[v];
   });
 };
+const thaiSort = (arr: string[]) => {
+  return arr.sort((a, b) => {
+    return a.localeCompare(b, undefined, { sensitivity: "accent" });
+  });
+};
+const numberSort = (arr: string[]) => {
+  return arr.sort((a, b) => {
+    return parseInt(a) - parseInt(b);
+  });
+};
 function App() {
   const [boraResult, setBoraResult] = useState<BoraResponse[]>();
   const [showExtraForm, setShowExtraForm] = useState(false);
@@ -38,8 +48,8 @@ function App() {
     }
     loadCandidates();
   }, [setCandidates]);
-  const provinces = uniqueArray(
-    Object.keys(candidates).map((key) => key.split("::")[0])
+  const provinces = thaiSort(
+    uniqueArray(Object.keys(candidates).map((key) => key.split("::")[0]))
   );
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
@@ -134,33 +144,37 @@ function App() {
 
   let districtList: string[] = [];
   if (selectedProvince !== "") {
-    districtList = uniqueArray(
-      Object.keys(candidates)
-        .filter(
-          (key) =>
-            key.split("::").length > 1 &&
-            key.split("::")[0] === selectedProvince
-        )
-        .map((key) => key.split("::")[1])
+    districtList = thaiSort(
+      uniqueArray(
+        Object.keys(candidates)
+          .filter(
+            (key) =>
+              key.split("::").length > 1 &&
+              key.split("::")[0] === selectedProvince
+          )
+          .map((key) => key.split("::")[1])
+      )
     );
   }
   let districtNoList: string[] = [];
   if (selectedProvince !== "" && selectedDistrict !== "") {
-    districtNoList = uniqueArray(
-      Object.keys(candidates)
-        .filter((key) => key.split("::").length > 2)
-        .filter((key) => {
-          const splitted = key.split("::");
-          if (splitted.length < 3) return false;
-          if (
-            splitted[0] === selectedProvince &&
-            splitted[1] === selectedDistrict
-          ) {
-            return true;
-          }
-          return false;
-        })
-        .map((key) => key.split("::")[2])
+    districtNoList = numberSort(
+      uniqueArray(
+        Object.keys(candidates)
+          .filter((key) => key.split("::").length > 2)
+          .filter((key) => {
+            const splitted = key.split("::");
+            if (splitted.length < 3) return false;
+            if (
+              splitted[0] === selectedProvince &&
+              splitted[1] === selectedDistrict
+            ) {
+              return true;
+            }
+            return false;
+          })
+          .map((key) => key.split("::")[2])
+      )
     );
   }
   const currentProvince = candidate?.province ?? boraResult?.[0]?.desc ?? "";
