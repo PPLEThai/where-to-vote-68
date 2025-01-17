@@ -26,7 +26,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       <text
         x="48"
         y="42"
-        fill="white"
+        fill={fillColor !== "#FFFF01" ? "white" : "#222222"}
         fontSize="36"
         textAnchor="middle"
         fontFamily="sans-serif"
