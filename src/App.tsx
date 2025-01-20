@@ -4,6 +4,7 @@ import { Candidate } from "./types/candidate";
 import { BoraResponse } from "./types/bora";
 import { Checkbox } from "./components/Checkbox";
 import logo from "./assets/logo.png";
+import tutorial from "./assets/tutorial.png";
 import { FormattedInput } from "@buttercup/react-formatted-input";
 import { motion } from "framer-motion";
 
@@ -277,27 +278,34 @@ function App() {
                   </p>
                 )}
                 <p className="text-sm text-[#222] font-regular font-body">
-                  กรุณาตรวจสอบที่เว็บไซต์ของสำนักบริหารการทะเบียนที่อยู่ด้านล่าง
-                  จากนั้นเลือกเขตเลือกตั้งของท่าน
-                  เพื่อค้นหาผู้สมัครของพรรคประชาชน
+                  กรุณาตรวจสอบที่เว็บไซต์ตรวจสอบสิทธิเลือกตั้งท้องถิ่น
+                  โดยการคลิกที่ปุ่มด้านล่าง จากนั้นตรวจสอบเขตเลือกตั้งของท่าน
+                  ว่าท่านอยู่ในเขตเลือกตั้งใด
                 </p>
-                <iframe
-                  src="https://boraservices.bora.dopa.go.th/election/enqelection-local/"
-                  className="w-full h-[600px] rounded-lg mt-4"
-                  title="ระบบตรวจสอบสิทธิเลือกตั้งท้องถิ่น"
-                />
+                <a
+                  href="https://boraservices.bora.dopa.go.th/election/enqelection-local/"
+                  target="_blank"
+                  className="w-full px-4 py-2 text-center border border-white/40 text-md rounded-lg bg-white/40 hover:bg-white/70 transition-colors block"
+                >
+                  ไปยังเว็บไซต์ตรวจสอบสิทธิเลือกตั้งท้องถิ่น
+                </a>
 
                 <p className="text-sm text-[#222] font-regular font-body">
                   เมื่อได้ข้อมูลเขตเลือกตั้งของท่านจากเว็บไซต์ด้านบนแล้ว
                   กรุณาเลือก จังหวัด อำเภอ และเขตเลือกตั้ง
                   เพื่อค้นหาผู้สมัครของพรรคประชาชน
                 </p>
+                <img
+                  src={tutorial}
+                  alt="ตัวอย่างการดูเขตเลือกตั้ง"
+                  className="w-full rounded-lg border border-white/40"
+                />
                 <p className="text-sm text-[#222] font-regular font-body">
-                  หากไม่มีตัวเลือกจังหวัดในรายการด้านล่าง
+                  (หากไม่มีตัวเลือกจังหวัดในรายการด้านล่าง
                   หมายความว่าไม่มีข้อมูลของผู้สมัคร
                   <span className="whitespace-nowrap">นายก</span>
                   อบจ.และ<span className="whitespace-nowrap">ส.อบจ.</span>
-                  ในนามพรรคประชาชน
+                  ในนามพรรคประชาชน)
                 </p>
                 <div className="flex flex-col">
                   <label htmlFor="provinceSelect" className="text-lg">
