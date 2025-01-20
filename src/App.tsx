@@ -31,6 +31,7 @@ const numberSort = (arr: string[]) => {
 function App() {
   const [boraResult, setBoraResult] = useState<BoraResponse[]>();
   const [showExtraForm, setShowExtraForm] = useState(false);
+  const [apiError, setAPIError] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [inputValue, setInputValue] = useState("");
   const [selectedProvince, setSelectedProvince] = useState("");
@@ -65,6 +66,7 @@ function App() {
             ""
           )}`
         );
+        console.log(resp);
         if (resp.ok) {
           const data = await resp.json();
           data.filter((item: BoraResponse) => item.eledate === 25680201);
@@ -76,11 +78,14 @@ function App() {
           } else {
             setError(null);
           }
-        } else {
+        } else if (resp.status === 404) {
           setBoraResult([]);
           setError(
             "ไม่พบข้อมูลสิทธิการเลือกตั้งท้องถิ่นของท่านในวันที่ 1 กุมภาพันธ์ นี้"
           );
+        } else {
+          setAPIError(true);
+          setShowExtraForm(true);
         }
       } finally {
         setLoading(false);
@@ -265,17 +270,27 @@ function App() {
                 <h2 className="text-center text-xl font-bold">
                   ตรวจสอบโดยทราบเขตเลือกตั้ง
                 </h2>
+                {apiError && (
+                  <p className="text-sm text-red-900 font-regular font-body">
+                    เกิดข้อผิดพลาดระหว่างการส่งข้อมูลไปตรวจสอบที่เว็บไซต์ของสำนักบริหารการทะเบียน
+                    กรมการปกครอง
+                  </p>
+                )}
                 <p className="text-sm text-[#222] font-regular font-body">
-                  หากไม่ทราบเขตเลือกตั้ง{" "}
-                  <a
-                    href="https://boraservices.bora.dopa.go.th/election/enqelection-local/"
-                    target="_blank"
-                    className="underline"
-                  >
-                    คลิกที่นี่
-                  </a>{" "}
-                  เพื่อตรวจสอบสิทธิเลือกตั้งท้องถิ่นที่เว็บไซต์ของสำนักบริหารการทะเบียน
-                  กรมการปกครอง
+                  กรุณาตรวจสอบที่เว็บไซต์ของสำนักบริหารการทะเบียนที่อยู่ด้านล่าง
+                  จากนั้นเลือกเขตเลือกตั้งของท่าน
+                  เพื่อค้นหาผู้สมัครของพรรคประชาชน
+                </p>
+                <iframe
+                  src="https://boraservices.bora.dopa.go.th/election/enqelection-local/"
+                  className="w-full h-[600px] rounded-lg mt-4"
+                  title="ระบบตรวจสอบสิทธิเลือกตั้งท้องถิ่น"
+                />
+
+                <p className="text-sm text-[#222] font-regular font-body">
+                  เมื่อได้ข้อมูลเขตเลือกตั้งของท่านจากเว็บไซต์ด้านบนแล้ว
+                  กรุณาเลือก จังหวัด อำเภอ และเขตเลือกตั้ง
+                  เพื่อค้นหาผู้สมัครของพรรคประชาชน
                 </p>
                 <p className="text-sm text-[#222] font-regular font-body">
                   หากไม่มีตัวเลือกจังหวัดในรายการด้านล่าง
