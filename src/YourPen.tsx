@@ -117,7 +117,7 @@ export default function YourPen() {
     <div className="min-h-screen bg-gradient-to-br from-blue-800 to-black p-4 flex justify-center items-center">
       <div className="max-w-[700px] bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 bg-gradient-to-br from-white to-blue-300">
         <h1 className="text-2xl md:text-4xl font-bold text-gray-800">
-          ปากกาของคุณ มีค่าเท่าไหร่?
+          ปากกาของคุณ มีมูลค่าเท่าไหร่?
         </h1>
 
         <p className="text-lg text-[#222] font-regular font-body">
