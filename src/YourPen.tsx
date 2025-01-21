@@ -90,6 +90,7 @@ export default function YourPen() {
     const provinceFromUrl = searchParams.get("p");
     if (provinceFromUrl && provinces.includes(provinceFromUrl)) {
       setSelectedProvince(provinceFromUrl);
+      setInputProvince(provinceFromUrl);
     }
   }, []);
 
