@@ -83,38 +83,17 @@ const provinces = [
 
 export default function YourPen() {
   const [selectedProvince, setSelectedProvince] = useState("");
-  const [inputProvince, setInputProvince] = useState("");
-  const [filteredProvinces, setFilteredProvinces] =
-    useState<string[]>(provinces);
-  const [showDropdown, setShowDropdown] = useState(false);
+  useState<string[]>(provinces);
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const provinceFromUrl = searchParams.get("p");
     if (provinceFromUrl && provinces.includes(provinceFromUrl)) {
       setSelectedProvince(provinceFromUrl);
-      setInputProvince(provinceFromUrl);
     }
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setInputProvince(value);
-    setShowDropdown(true);
-    if (value.length == 0) {
-      setFilteredProvinces(provinces);
-      return;
-    }
-
-    const filtered = provinces.filter((province) =>
-      province.toLowerCase().includes(value.toLowerCase())
-    );
-    setFilteredProvinces(filtered);
-  };
-
   const selectProvince = (province: string) => {
     setSelectedProvince(province);
-    setInputProvince(province);
-    setShowDropdown(false);
     const searchParams = new URLSearchParams(window.location.search);
     searchParams.set("p", province);
     window.history.pushState(null, "", `?${searchParams.toString()}`);
