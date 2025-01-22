@@ -153,7 +153,7 @@ export default function YourPen() {
             <img
               src={`https://election-d10n-api.pplethai.org/poster/1/${encodeURIComponent(
                 selectedProvince
-              )}.png?v=1`}
+              )}.png?v=2`}
               alt={`Poster for ${selectedProvince}`}
               className="w-full rounded-lg shadow-md"
             />
