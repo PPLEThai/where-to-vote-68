@@ -59,15 +59,24 @@ function App() {
       setLoading(true);
       setBoraResult([]);
       try {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const token = await (window as any).grecaptcha.execute(
+          "6Lf_McEqAAAAAAHT47IVqvlBqYtIifug3Fx5xXK6",
+          { action: "submit" }
+        );
         const resp = await fetch(
           `${
             import.meta.env.VITE_BORA_CORS_URL
           }boraservices.bora.dopa.go.th/api/eleloc/v1/eleloccheck/${inputValue.replace(
             /-/g,
             ""
-          )}`
+          )}`,
+          {
+            headers: {
+              "X-Recaptcha-Token": token,
+            },
+          }
         );
-        console.log(resp);
         if (resp.ok) {
           const data = await resp.json();
           data.filter((item: BoraResponse) => item.eledate === 25680201);
