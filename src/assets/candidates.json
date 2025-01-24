@@ -7514,21 +7514,6 @@
     "obj_profile_picture": "https://peoplesparty.or.th/wp-content/uploads/2024/12/ชลบุรี.png",
     "obj_candidate_number": "2"
   },
-  "ชลบุรี::พานทอง::1": {
-    "sobj_full_name": "สุนทร จันทร์เกลี้ยง",
-    "sobj_candidate_number": "2",
-    "province": "ชลบุรี",
-    "district": "พานทอง",
-    "district_no": "1",
-    "region": "ภาคกลาง",
-    "sobj_color_name": "เขียว",
-    "sobj_color_code": "#00AF50",
-    "obj_color_name": "ชมพู",
-    "obj_color_code": "#D99594",
-    "obj_full_name": "ชุดาภัค วสุเนตรกุล",
-    "obj_profile_picture": "https://peoplesparty.or.th/wp-content/uploads/2024/12/ชลบุรี.png",
-    "obj_candidate_number": "2"
-  },
   "ชลบุรี::พานทอง::2": {
     "sobj_full_name": "ไทยอนันต์ ทองอยู่",
     "sobj_candidate_number": "2",
@@ -7610,21 +7595,6 @@
     "province": "ชลบุรี",
     "district": "ศรีราชา",
     "district_no": "1",
-    "region": "ภาคกลาง",
-    "sobj_color_name": "เขียว",
-    "sobj_color_code": "#00AF50",
-    "obj_color_name": "ชมพู",
-    "obj_color_code": "#D99594",
-    "obj_full_name": "ชุดาภัค วสุเนตรกุล",
-    "obj_profile_picture": "https://peoplesparty.or.th/wp-content/uploads/2024/12/ชลบุรี.png",
-    "obj_candidate_number": "2"
-  },
-  "ชลบุรี::ศรีราชา::2": {
-    "sobj_full_name": "เทพ ใจรักษ์",
-    "sobj_candidate_number": "3",
-    "province": "ชลบุรี",
-    "district": "ศรีราชา",
-    "district_no": "2",
     "region": "ภาคกลาง",
     "sobj_color_name": "เขียว",
     "sobj_color_code": "#00AF50",
