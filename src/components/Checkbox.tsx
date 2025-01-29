@@ -5,6 +5,7 @@ interface CheckboxProps {
   fillColor?: string;
   text?: string;
   delay?: boolean;
+  animate?: boolean;
 }
 
 const DURATION = 3;
@@ -12,6 +13,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   fillColor = "#CC0001",
   text = "",
   delay = false,
+  animate = true,
 }) => {
   return (
     <svg
@@ -42,38 +44,56 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         stroke="#1409B9"
         strokeLinecap="round"
       /> */}
-      <motion.path
-        initial={{ pathLength: 0.001 }}
-        animate={{ pathLength: [0.001, 1, 1, 1, 1, 1] }}
-        transition={{
-          pathLength: {
-            duration: DURATION,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "easeOut",
-            delay: delay ? 1 : 0,
-          },
-        }}
-        d="M93 3C116.667 12.5 164.7 35.2 167.5 50"
-        stroke="#1409B9"
-        strokeLinecap="round"
-      />
-      <motion.path
-        initial={{ pathLength: 0.001 }}
-        animate={{ pathLength: [0.001, 0.001, 1, 1, 1, 1] }}
-        transition={{
-          pathLength: {
-            duration: DURATION,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "easeOut",
-            delay: delay ? 1 : 0,
-          },
-        }}
-        d="M98.5 53C114.167 36.5 148.9 4.1 162.5 6.5"
-        stroke="#1409B9"
-        strokeLinecap="round"
-      />
+      {animate && (
+        <motion.path
+          initial={{ pathLength: 0.001 }}
+          animate={{ pathLength: [0.001, 1, 1, 1, 1, 1] }}
+          transition={{
+            pathLength: {
+              duration: DURATION,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeOut",
+              delay: delay ? 1 : 0,
+            },
+          }}
+          d="M93 3C116.667 12.5 164.7 35.2 167.5 50"
+          stroke="#1409B9"
+          strokeLinecap="round"
+        />
+      )}
+      {!animate && (
+        <path
+          d="M93 3C116.667 12.5 164.7 35.2 167.5 50"
+          stroke="#1409B9"
+          strokeLinecap="round"
+        />
+      )}
+      {animate && (
+        <motion.path
+          initial={{ pathLength: 0.001 }}
+          animate={{ pathLength: [0.001, 0.001, 1, 1, 1, 1] }}
+          transition={{
+            pathLength: {
+              duration: DURATION,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeOut",
+              delay: delay ? 1 : 0,
+            },
+          }}
+          d="M98.5 53C114.167 36.5 148.9 4.1 162.5 6.5"
+          stroke="#1409B9"
+          strokeLinecap="round"
+        />
+      )}
+      {!animate && (
+        <path
+          d="M98.5 53C114.167 36.5 148.9 4.1 162.5 6.5"
+          stroke="#1409B9"
+          strokeLinecap="round"
+        />
+      )}
     </svg>
   );
 };
