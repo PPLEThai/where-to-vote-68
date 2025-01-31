@@ -81,6 +81,21 @@ function Static() {
           ตรวจสอบหมายเลขผู้สมัคร นายกอบจ. และ ส.อบจ.ของพรรคประชาชน
         </h1>
         <div className="mt-6 text-center">
+          <a
+            href="https://boraservices.bora.dopa.go.th/election/enqelection-local/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-[#191E50] hover:bg-[#242E91] text-[#ddd] font-semibold py-3 px-6 rounded-lg transition-colors"
+          >
+            ตรวจสอบเขตเลือกตั้ง และหน่วยเลือกตั้ง
+          </a>
+          <p className="text-md mt-2 mb-4">
+            หากไม่ทราบเขตเลือกตั้ง สามารถตรวจสอบเขตเลือกตั้ง
+            และหน่วยเลือกตั้งของท่าน ที่เว็บไซต์ของสำนักบริหารการทะเบียน
+            กรมการปกครอง โดยการกดปุ่มด้านบน
+          </p>
+        </div>
+        <div className="mt-6 text-center">
           <h2 className="text-lg font-semibold mb-4">รายชื่อจังหวัด</h2>
           <div className="flex flex-col space-y-2">
             {provinces.map((province) => (
